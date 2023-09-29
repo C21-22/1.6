@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Class Schedule and Registration Form</title>
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #FFD300; /* Yellow background */
+            color: #000; /* Black text */
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: hue-rotate(180deg);
+        }
+
+        .container {
+            max-width: 1000px; /* Adjusted max-width */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(173, 216, 230, 0.3); /* Light blue with transparency */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #000;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #111;
+            color: #FFD300; /* Yellow text */
+        }
+
+        tr.scroll-animation {
+            transition: background-color 0.3s;
+        }
+
+        tr.scroll-animation:hover {
+            background-color: #FF69B4; /* Pink on hover */
+        }
+
+       .registration-form {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #000;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 999;
+    display: none;
+    color: #FFD300; /* Yellow text */
+}
+
+        .registration-form.open {
+            display: block;
+        }
+
+        .registration-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #FF1493; /* Pink */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD300; /* Yellow */
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .registration-icon:hover {
+            background-color: #FF69B4; /* Lighter pink on hover */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://kpi.ua/images/iszzi.png" alt="https://kpi.ua/images/iszzi.png">
+    </div>
+
+    <div class="container">
+        <div class="class-schedule">
+            <h1>Розклад подій</h1>
+                   <table id="table1">
+            <tr>
+                <th>Час</th>
+                <th>Понеділок</th>
+                <th>Вівторок</th>
+                <th>Середа</th>
+                <th>Четвер</th>
+                <th>П'ятниця</th>
+                <th>Субота</th>
+                <th>Неділя</th>
+            </tr>
+            <tr class="scroll-animation">
+                <td>08:30-09:15 09:20-10:05</td>
+                <td>В Україні знайшли найбільше родовище нафти у світі</td>
+                <td>В Україні починаються засідання Верховної Ради</td>
+                <td>1 з політиків викрав $800 млрд. і втік в Росію</td>
+                <td>В Росії стався вибух на одному з заводів</td>
+                <td>Більшість москалів почало хворіти</td>
+                <td>11% населення Росії заражене,
+               люди нарешті зрозуміли що сталося</td>
+                <td>Сигнали перервалися і більше не з'являлися</td>
+            </tr>
+            <tr class="scroll-animation">
+                <td>10:25-11:10 11:15-12:00</td>
+                <td>Західні країни починають пропонувати Україні співпрацю і фінансову допомогу</td>
+                <td>Починається буріння свердловини</td>
+                <td>Росія розпочинає таємні дослідження</td>
+                <td>В новинах кажуть про вибух балонів з газом</td>
+                <td>В Росії починається паніка, люди починають кусати один одного</td>
+                <td>37% населення Росії заражені,
+                країни світу негайно вирішують питання протиборства вірусу</td>
+                <td>З підтримки всього світу, буде проведена операщія по винищенню вірусу</td>
+            </tr>
+            <tr class="scroll-animation">
+                <td>12:10-13:05 13:10-13:55</td>
+                <td>Вся Україна святкує</td>
+                <td>Росія починає активний наступ, використовує всі методи, щоб перехопити свердловину</td>
+                <td>Російські війська відступають з території України</td>
+                <td>Деякі російські телеканали перестали працювати</td>
+                <td>Це був не вибух балонів, а виток секретного патогену вірусу, який розробляла Росія</td>
+                <td>62% населення Росії заражені,
+                було вирішено знищити вірус разом з країною агрессором</td>
+                <td>Після перевірок, витоку вірусу не виявлено, світ може спокійно видихнути</td>
+            </tr>
+            <tr class="scroll-animation">
+                <td>16:10-16:55 17:00-17:45</td>
+                <td>США таємно передають Україні $800 млрд.</td>
+                <td>Україна вистояла атаку, нападники розбиті</td>
+                <td>Україна вільна від нападників</td>
+                <td>Більшість російських політиків зникла</td>
+                <td>весь світ ізолював Росію</td>
+                <td>98% населення Росії заражені,
+                в ефірі іноді можна почути  ...---...</td>
+                <td>Україна святкує перемогу над давнім ворогом і зовсім скоро ввійде в топ 5 країн світу</td>
+            </tr>
+
+        </table>
+
+
+        </div>
+        
+       
+        <table id="table2" class="class-schedule">
+         
+        </table>
+      </div>
+
+    <div id="registrationButton" class="registration-icon">&#9759;</div>
+
+    <div id="registrationForm" class="registration-form">
+        <h1>Реєстрація</h1>
+        <form id="registration-form">
+            <label for="first-name">:Введіть ваше ім'я:</label>
+            <input type="text" id="first-name" name="first-name" required><br><br>
+
+            <label for="last-name">:Введіть ваше прізвище:</label>
+            <input type="text" id="last-name" name="last-name" required><br><br>
+
+            <label for="email">:Введіть вашу електронну пошту:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">:Створіть новий пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="confirm-password">:Підтвердіть ваш пароль:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+ 
+       <script>
+        const registrationButton = document.getElementById('registrationButton');
+        const registrationForm = document.getElementById('registrationForm');
+
+        registrationButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            registrationForm.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!registrationForm.contains(event.target) && !registrationButton.contains(event.target)) {
+                registrationForm.classList.remove('open');
+            }
+        });
+
+        const registrationFormElement = document.getElementById('registration-form');
+
+        registrationFormElement.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            const namePattern = /^[A-Za-z]+$/;
+
+            if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+                alert('First name and last name must contain only letters.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Password and Confirm Password do not match.');
+                return;
+            }
+
+
+            alert('Form submitted successfully!');
+            registrationFormElement.submit();
+        });
+    </script>
+</body>
+</html>
+
